@@ -19,9 +19,9 @@ NO_LOCK_REQUIRED=true
 # Build and run containers and network
 echo "docker-compose.yml" > ${LOCK_FILE}
 
-echo "${bold}*************************************"
+echo "*************************************"
 echo "Quorum Dev Quickstart"
-echo "*************************************${normal}"
+echo "*************************************"
 echo "Start network"
 echo "--------------------"
 

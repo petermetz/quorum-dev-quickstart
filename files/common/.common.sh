@@ -7,9 +7,6 @@ if [ "$me" = ".common.sh" ];then
   exit 1
 fi
 
-bold=$(tput bold)
-normal=$(tput sgr0)
-
 hash docker 2>/dev/null || {
   echo >&2 "This script requires Docker but it's not installed."
   echo >&2 "Refer to documentation to fulfill requirements."

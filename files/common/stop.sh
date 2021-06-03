@@ -16,9 +16,9 @@ NO_LOCK_REQUIRED=false
 . ./.env
 . ./.common.sh
 
-echo "${bold}*************************************"
+echo "*************************************"
 echo "Quorum Dev Quickstart "
-echo "*************************************${normal}"
+echo "*************************************"
 echo "Stopping network"
 echo "----------------------------------"
 

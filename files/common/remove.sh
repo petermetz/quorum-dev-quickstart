@@ -22,9 +22,9 @@ removeDockerImage(){
   fi
 }
 
-echo "${bold}*************************************"
+echo "*************************************"
 echo "Quorum Dev Quickstart "
-echo "*************************************${normal}"
+echo "*************************************"
 echo "Stop and remove network..."
 docker-compose down -v
 docker-compose rm -sfv

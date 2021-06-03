@@ -20,9 +20,9 @@ maxRetryCount=50
 HOST=${DOCKER_PORT_2375_TCP_ADDR:-"localhost"}
 
 # Displays links to exposed services
-echo "${bold}*************************************"
+echo "*************************************"
 echo "Quorum Dev Quickstart "
-echo "*************************************${normal}"
+echo "*************************************"
 
 elk_setup=true
 if [ -z `docker-compose -f docker-compose.yml ps -q kibana 2>/dev/null` ] ; then
@@ -41,7 +41,7 @@ if [ $elk_setup == true ]; then
       curl --silent --output /dev/null -X POST "http://${HOST}:5601/api/saved_objects/index-pattern/metricbeat" -H 'kbn-xsrf: true' -H 'Content-Type: application/json' -d '{"attributes": {"title": "metricbeat-*","timeFieldName": "@timestamp"}}'
       curl --silent --output /dev/null -X POST "http://${HOST}:5601/api/saved_objects/_import" -H 'kbn-xsrf: true' --form file=@./config/kibana/besu_overview_dashboard.ndjson
       curl --silent --output /dev/null -X POST "http://${HOST}:5601/api/saved_objects/index-pattern/besu" -H 'kbn-xsrf: true' -H 'Content-Type: application/json' -d '{"attributes": {"title": "besu-*","timeFieldName": "@timestamp"}}'
-    else 
+    else
       curl --silent --output /dev/null -X POST "http://${HOST}:5601/api/saved_objects/index-pattern/quorum" -H 'kbn-xsrf: true' -H 'Content-Type: application/json' -d '{"attributes": {"title": "quorum-*","timeFieldName": "@timestamp"}}'
     fi
     curl --silent --output /dev/null -X POST "http://${HOST}:5601/api/saved_objects/index-pattern/tessera" -H 'kbn-xsrf: true' -H 'Content-Type: application/json' -d '{"attributes": {"title": "tessera-*","timeFieldName": "@timestamp"}}'
